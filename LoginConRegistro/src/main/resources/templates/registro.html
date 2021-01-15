@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/base-layout :: head">
+</head>
+<body>
+	<header>
+		<span class="border border-primary"></span> <span
+			class="border border-secondary"></span> <span
+			class="border border-success"></span> <span
+			class="border border-danger"></span> <span
+			class="border border-warning"></span> <span
+			class="border border-info"></span> <span class="border border-light"></span>
+		<span class="border border-dark"></span> <span
+			class="border border-white"></span>
+	</header>
+
+
+	<div class=" container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-header">
+						<h4>Registro</h4>
+					</div>
+
+					<div class="card-body">
+						<form th:action="@{/auth/registro}" th:object="${usuario}"
+							method="post">
+							<div class="row form-group">
+								<label class="col-md-3">Nombre</label> <input type="text"
+									class="form-control col-md-7" th:field="*{nombre}">
+							</div>
+
+							<div class="row form-group">
+								<label class="col-md-3">Apellido</label> <input type="text"
+									class="form-control col-md-7" th:field="*{apellido}">
+							</div>
+
+							<div class="row form-group">
+								<label class="col-md-3">Email</label> <input type="text"
+									class="form-control col-md-7" th:field="*{email}">
+							</div>
+
+							<div class="row form-group">
+								<label class="col-md-3">Nick</label> <input type="text"
+									class="form-control col-md-7" th:field="*{username}">
+							</div>
+
+							<div class="row form-group">
+								<label class="col-md-3">Contraseña</label> <input type="text"
+									class="form-control col-md-7" th:field="*{password}">
+							</div>
+
+
+							<input class="btn btn-primary" type="submit" value="Continuar" />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

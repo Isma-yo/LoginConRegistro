@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/base-layout :: head">
+</head>
+<body>
+
+	<div class=" container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div th:if="${param.error}" class="alert alert-danger mb-3">Credenciales
+					incorrectas</div>
+				<div class="card">
+					<div class="card-header">
+						<h4>Iniciar sesión</h4>
+					</div>
+
+					<div class="card-body">
+						<form id="loginform" th:action="@{/auth/login-post}"
+							th:object="${usuario}" method="post">
+							<div class="row form-group">
+								<label class="col-md-3">Usuario</label> <input type="text"
+									class="form-control col-md-7" th:field="*{username}">
+							</div>
+							<div class="row form-group">
+								<label class="col-md-3">Contraseña</label> <input type="text"
+									class="form-control col-md-7" th:field="*{password}">
+							</div>
+
+							<div class="row form-group">
+								<input class="btn btn-primary" type="submit" value="Continuar" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
